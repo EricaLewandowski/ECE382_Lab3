@@ -50,8 +50,8 @@ main:
 	call	#initNokia					; initialize the Nokia 1206
 	call	#clearDisplay				; clear the display and get ready....
 
-	clr		R10							; used to move the cursor around
-	clr		R11
+	mov		#0x24,R10							; used to move the cursor around
+	mov		#0x28,R11
 
 while1:
 	bit.b	#8, &P2IN					; bit 3 of P1IN set?
@@ -62,15 +62,19 @@ while0:
 	jz		while0						; Yes, branch back and wait
 
 	mov		#NOKIA_DATA, R12			; For testing just draw an 8 pixel high
-	mov		#0xE7, R13					; beam with a 2 pixel hole in the center
+	mov		#0xFF, R13					; beam completely full
 	call	#writeNokiaByte
 
-	inc		R10							; since rows are 8 times bigger than columns
+;blockLoop:
+;	inc		R10							; since rows are 8 times bigger than columns
+;	mov		#0x08, R5
 	and.w	#0x07, R10					; wrap over the row mod 8
 	inc		R11							; just let the columm overflow after 92 buttons
-	mov		R10, R12					; increment the row
+	mov		#0x24, R12					; increment the row
 	mov		R11, R13					; and column of the next beam
-	call	#setAddress					; we draw
+	call	#setAddress		            ; we draw
+;	dec		R5
+;	jnz		blockLoop
 
 	jmp		while1
 
