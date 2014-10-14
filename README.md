@@ -63,8 +63,19 @@ Table 2
 
 Logic Analyzer Graphic
 
+
+![Logic Analyzer graphic](logic.jpg)
+
 RESET Graphic & Data
+
+
+![RESET graphic](reset.jpg)
 
 If you set r12 to 0xFFFF then there are 65535 (in decimal) loops. Reset time equals 7.085 nanoseconds which means that each iteration is 1.08 picoseconds. 
 
 Writing Modes Graphic
+
+#Functionality
+
+
+![test picture](IMG_4210.JPG)
