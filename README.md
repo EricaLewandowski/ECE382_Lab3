@@ -75,6 +75,8 @@ If you set r12 to 0xFFFF then there are 65535 (in decimal) loops. Reset time equ
 
 Writing Modes Graphic
 
+![bit block](bitblockComplete.bmp)
+
 #Functionality
 
 
