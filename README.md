@@ -79,5 +79,11 @@ Writing Modes Graphic
 
 #Functionality
 
+The picture below is the original output from my lab3.asm file. 
 
 ![test picture](IMG_4210.JPG)
+
+
+I finally got a loop to build and put a line on the screen, but the MSP430 wouldn't react to the loop code, resulting in the second image below. Therefore, I reverted back to the commited file where each button press puts a line on the LCD screen. 
+
+![test picture2](IMG_4213.JPG)
